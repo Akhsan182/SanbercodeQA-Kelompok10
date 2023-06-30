@@ -1,0 +1,10 @@
+{
+    "valid_signup_user": "akhsanul",
+    "valid_signup_pass": "maulana123",
+
+    "valid_user": "akhsanul",
+    "valid_pass": "maulana123",
+    "invalid_user": "salahuser",
+    "invalid_pass": "salahpass"
+
+}
