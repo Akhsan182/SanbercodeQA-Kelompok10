@@ -2,7 +2,7 @@
 
 Nama Kelompok:
 1. Akhsanul Maulana
-2.
+2. Nida Regita F
 3.
 4.
 
