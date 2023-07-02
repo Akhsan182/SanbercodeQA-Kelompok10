@@ -5,6 +5,7 @@ class addtocartPage{
     loginBtn2 = '#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary'
     alert = '#nameofuser'
     item1 = ':nth-child(1) > .card > .card-block > .card-title > .hrefch'
+    addtocartBtn = '.col-sm-12 > .btn'
 
     clickLogin1(){
         cy.get(this.loginBtn1).click()
@@ -32,6 +33,10 @@ class addtocartPage{
 
     additem1(){
         cy.get(this.item1).click()
+    }
+
+    clickaddtocartButton(){
+       cy.get(this.addtocartBtn).click()
     }
 }
 
