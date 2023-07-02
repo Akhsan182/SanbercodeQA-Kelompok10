@@ -25,8 +25,34 @@ class signupPage{
         cy.get(this.signupBtn2).click()
     }
 
-    validate(){
-        cy.get(this.alert).should('be.visible')
+    validate_success(){
+        cy.on('window:alert', (str) => {
+            expect(str).to.equal('Sign up successful')
+        })  
+    }
+
+    validate_username_already_exist() {
+        cy.on('window:alert', (str) => {
+            expect(str).to.equal('Please insert password')
+        })  
+    }
+
+    validate_empty_pass() {
+        cy.on('window:alert', (str) => {
+            expect(str).to.equal('Please insert password')
+        })  
+    }
+
+    validate_empty_user() {
+        cy.on('window:alert', (str) => {
+            expect(str).to.equal('Please insert username')
+        })  
+    }
+
+    validate_empty_user_pass() {
+        cy.on('window:alert', (str) => {
+            expect(str).to.equal('Please insert username & password')
+        })  
     }
 }
 

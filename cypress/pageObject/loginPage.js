@@ -25,8 +25,32 @@ class loginPage{
         cy.get(this.loginBtn2).click()
     }
 
-    validate(){
+    validate_success(){
         cy.get(this.alert).should('be.visible')
+    }
+
+    validate_invalid_pass() {
+        cy.on('window:alert', (str) => {
+            expect(str).to.equal('Wrong password.')
+        })  
+    }
+
+    validate_empty_pass() {
+        cy.on('window:alert', (str) => {
+            expect(str).to.equal('Please insert password')
+        })  
+    }
+
+    validate_empty_user() {
+        cy.on('window:alert', (str) => {
+            expect(str).to.equal('Please insert username')
+        })  
+    }
+
+    validate_empty_user_pass() {
+        cy.on('window:alert', (str) => {
+            expect(str).to.equal('Please insert username & password')
+        })  
     }
 }
 
