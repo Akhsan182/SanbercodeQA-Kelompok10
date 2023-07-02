@@ -1,0 +1,137 @@
+import loginPage from "../../pageObject/loginPage"
+import menuHeader from "../../pageObject/menuHeader"
+const inputan = require('../../fixtures/demoblaze/data.json')
+
+describe('Verify Menu in Cart Page', () => {
+  const Login_Page = new loginPage()
+  const Menu_Header = new menuHeader()
+    it('TC_CP_1', () => {
+      cy.visit('https://www.demoblaze.com')
+      Menu_Header.clickMenuCart()
+      Menu_Header.visibleLogoProduct1()
+      Menu_Header.visibleLogoProduct2()
+      Menu_Header.visibleMenuHome()
+      Menu_Header.visibleMenuContact() 
+      Menu_Header.visibleMenuAboutus() 
+      Menu_Header.visibleMenuSignup() 
+      Menu_Header.visibleMenuLogin()
+      cy.get('.col-lg-8 > h2').should('be.visible')
+      cy.get('[width="120"]').should('be.visible')
+      cy.get('tr > :nth-child(2)').should('be.visible')
+      cy.get('tr > :nth-child(3)').should('be.visible')
+      cy.get('tr > :nth-child(4)').should('be.visible')
+      cy.get('.col-lg-1 > h2').should('be.visible')
+      cy.get('.col-lg-1 > h2').should('be.visible')
+      cy.url().should('eq', 'https://www.demoblaze.com/cart.html')
+    })
+
+    it('TC_CP_2', () => {
+        cy.visit('https://www.demoblaze.com/cart.html')
+        Menu_Header.clickMenuHome()
+        cy.url().should('eq', 'https://www.demoblaze.com/index.html')
+    })
+
+    it('TC_CP_3', () => {
+        cy.visit('https://www.demoblaze.com/cart.html')
+        Menu_Header.clickMenuContact()
+        cy.get('[data-target="#exampleModal"]').contains('Contact').should('have.attr', 'href', '#')
+    })
+
+    it('TC_CP_4', () => {
+        cy.visit('https://www.demoblaze.com/cart.html')
+        Menu_Header.clickMenuAboutus()
+        cy.get('[data-target="#videoModal"]').contains('About us').should('have.attr', 'href', '#')
+    })
+
+    it('TC_CP_5', () => {
+      cy.visit('https://www.demoblaze.com/cart.html')
+      Menu_Header.clickMenuLogin()
+      cy.get('[data-target="#logInModal"]').contains('Log in').should('have.attr', 'href', '#')
+    })
+
+    it('TC_CP_6', () => {
+      cy.visit('https://www.demoblaze.com/cart.html')
+      Menu_Header.clickMenuSignup()
+      cy.get('[data-target="#signInModal"]').contains('Sign up').should('have.attr', 'href', '#')
+    })
+
+    it('TC_CP_7', () => {
+      cy.visit('https://www.demoblaze.com')
+      Login_Page.clickLogin1()
+      Menu_Header.wait()
+      Login_Page.inputUsername(inputan.valid_user)
+      Login_Page.inputPassword(inputan.valid_pass)
+      Login_Page.clickLogin2()
+      Menu_Header.wait()
+      Menu_Header.clickMenuCart()
+      Menu_Header.visibleLogoProduct1()
+      Menu_Header.visibleLogoProduct2()
+      Menu_Header.visibleMenuHome()
+      Menu_Header.visibleMenuContact()
+      Menu_Header.visibleMenuAboutus()
+      Menu_Header.visibleMenuCart()
+      Menu_Header.visibleMenuLogin()
+      Menu_Header.visibleMenuSignup()
+      cy.get('.col-lg-8 > h2').should('be.visible')
+      cy.get('[width="120"]').should('be.visible')
+      cy.get('tr > :nth-child(2)').should('be.visible')
+      cy.get('tr > :nth-child(3)').should('be.visible')
+      cy.get('tr > :nth-child(4)').should('be.visible')
+      cy.get('.col-lg-1 > h2').should('be.visible')
+      cy.get('.col-lg-1 > h2').should('be.visible')
+      cy.url().should('eq', 'https://www.demoblaze.com/cart.html')
+    })
+
+    it('TC_CP_8', () => {
+      cy.visit('https://www.demoblaze.com')
+      Login_Page.clickLogin1()
+      Menu_Header.wait()
+      Login_Page.inputUsername(inputan.valid_user)
+      Login_Page.inputPassword(inputan.valid_pass)
+      Login_Page.clickLogin2()
+      Menu_Header.wait()
+      Menu_Header.clickMenuCart()
+      Menu_Header.clickMenuHome()
+      cy.url().should('eq', 'https://www.demoblaze.com/index.html')
+    })
+
+    it('TC_CP_9', () => {
+      cy.visit('https://www.demoblaze.com')
+      Login_Page.clickLogin1()
+      Menu_Header.wait()
+      Login_Page.inputUsername(inputan.valid_user)
+      Login_Page.inputPassword(inputan.valid_pass)
+      Login_Page.clickLogin2()
+      Menu_Header.wait()
+      Menu_Header.clickMenuCart()
+      Menu_Header.clickMenuContact()
+      cy.get('[data-target="#exampleModal"]').contains('Contact').should('have.attr', 'href', '#')
+    })
+
+    it('TC_CP_10', () => {
+      cy.visit('https://www.demoblaze.com')
+      Login_Page.clickLogin1()
+      Menu_Header.wait()
+      Login_Page.inputUsername(inputan.valid_user)
+      Login_Page.inputPassword(inputan.valid_pass)
+      Login_Page.clickLogin2()
+      Menu_Header.wait()
+      Menu_Header.clickMenuCart()
+      Menu_Header.clickMenuAboutus()
+      cy.get('[data-target="#videoModal"]').contains('About us').should('have.attr', 'href', '#')
+    })
+
+    it('TC_CP_11', () => {
+      cy.visit('https://www.demoblaze.com')
+      Login_Page.clickLogin1()
+      Menu_Header.wait()
+      Login_Page.inputUsername(inputan.valid_user)
+      Login_Page.inputPassword(inputan.valid_pass)
+      Login_Page.clickLogin2()
+      Menu_Header.wait()
+      Menu_Header.clickMenuCart()
+      Menu_Header.clickMenuLogout()
+      cy.url().should('eq', 'https://www.demoblaze.com/index.html')
+    })
+
+})
