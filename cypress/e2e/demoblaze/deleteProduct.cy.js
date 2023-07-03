@@ -16,8 +16,8 @@ describe('User delete product from Cart page', () => {
   it('TC_CP_12 User can delete product from cart', () => {
     Login_Page.clickLogin1()
     Menu_Header.wait()
-    Login_Page.inputUsername(inputan.valid_user)
-    Login_Page.inputPassword(inputan.valid_pass)
+    Login_Page.inputUsername(inputan.valid_user2)
+    Login_Page.inputPassword(inputan.valid_pass2)
     Login_Page.clickLogin2()
     Menu_Header.wait()
     AddtoCart_Page.additem1()
@@ -29,8 +29,8 @@ describe('User delete product from Cart page', () => {
   it('TC_CP_13 User can delete product from cart on second line', () => {
     Login_Page.clickLogin1()
     Login_Page.wait()
-    Login_Page.inputUsername(inputan.valid_user)
-    Login_Page.inputPassword(inputan.valid_pass)
+    Login_Page.inputUsername(inputan.valid_user2)
+    Login_Page.inputPassword(inputan.valid_pass2)
     Login_Page.clickLogin2()
     Login_Page.wait()
     AddtoCart_Page.additem1()
