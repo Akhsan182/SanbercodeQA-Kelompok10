@@ -36,7 +36,7 @@ describe('User delete product from Cart page', () => {
     AddtoCart_Page.additem1()
     AddtoCart_Page.clickaddtocartButton()
     Menu_Header.clickMenuHome()
-    AddtoCart_Page.additem1()
+    AddtoCart_Page.additem2()
     AddtoCart_Page.clickaddtocartButton()
     Menu_Header.clickMenuCart()
     DeleteProduct.clickDeleteProduct2nd()
