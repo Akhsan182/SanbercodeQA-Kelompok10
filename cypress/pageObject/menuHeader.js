@@ -9,6 +9,7 @@ class menuHeader {
     logoProduct1 = '#nava > img'
     logoProduct2 = '#nava'
     menuLogout = '#logout2'
+    btnPlaceOrder = '.col-lg-1 > .btn'
 
     //Logo
     visibleLogoProduct1(){
@@ -81,6 +82,11 @@ class menuHeader {
     //Logout
     clickMenuLogout(){
         cy.get(this.menuLogout).click() 
+    }
+
+    //Button Place Order
+    clickBtnPlaceOrder(){
+        cy.get(this.btnPlaceOrder).click() 
     }
 
 }
