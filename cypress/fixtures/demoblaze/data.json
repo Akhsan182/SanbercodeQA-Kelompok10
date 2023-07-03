@@ -4,6 +4,8 @@
 
     "valid_user": "akhsanul",
     "valid_pass": "maulana123",
+    "valid_user2": "user_rahmi",
+    "valid_pass2": "pass_rahmi",
     "invalid_user": "salahuser",
     "invalid_pass": "salahpass"
 
