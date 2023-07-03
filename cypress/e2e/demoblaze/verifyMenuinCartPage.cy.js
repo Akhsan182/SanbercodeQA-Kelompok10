@@ -134,4 +134,23 @@ describe('Verify Menu in Cart Page', () => {
       cy.url().should('eq', 'https://www.demoblaze.com/index.html')
     })
 
+    it('TC_CP_14', () => {
+      cy.visit('https://www.demoblaze.com/cart.html')
+      Menu_Header.clickBtnPlaceOrder()
+      cy.get('#orderModalLabel').contains('Place order')
+    })
+
+    it('TC_CP_15', () => {
+      cy.visit('https://www.demoblaze.com')
+      Login_Page.clickLogin1()
+      Menu_Header.wait()
+      Login_Page.inputUsername(inputan.valid_user2)
+      Login_Page.inputPassword(inputan.valid_pass2)
+      Login_Page.clickLogin2()
+      Menu_Header.wait()
+      Menu_Header.clickMenuCart()
+      Menu_Header.clickBtnPlaceOrder()
+      cy.get('#orderModalLabel').contains('Place order')
+    })
+
 })
