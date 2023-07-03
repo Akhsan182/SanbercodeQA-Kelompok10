@@ -38,6 +38,12 @@ class addtocartPage{
     clickaddtocartButton(){
        cy.get(this.addtocartBtn).click()
     }
+
+    validate_success() {
+        cy.on('window:alert', (str) => {
+            expect(str).to.equal('Product added.')
+        })  
+    }
 }
 
 export default addtocartPage

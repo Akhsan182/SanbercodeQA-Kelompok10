@@ -15,6 +15,7 @@ describe('Add to Cart Scenario', () => {
     AddtoCart_Page.validate()
     AddtoCart_Page.additem1()
     AddtoCart_Page.clickaddtocartButton()
+    AddtoCart_Page.validate_success()
   })
 
 })
