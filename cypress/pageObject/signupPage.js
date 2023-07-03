@@ -33,25 +33,25 @@ class signupPage{
 
     validate_username_already_exist() {
         cy.on('window:alert', (str) => {
-            expect(str).to.equal('Please insert password')
+            expect(str).to.equal('This user already exist.')
         })  
     }
 
     validate_empty_pass() {
         cy.on('window:alert', (str) => {
-            expect(str).to.equal('Please insert password')
+            expect(str).to.equal('Please fill out Username and Password.')
         })  
     }
 
     validate_empty_user() {
         cy.on('window:alert', (str) => {
-            expect(str).to.equal('Please insert username')
+            expect(str).to.equal('Please fill out Username and Password.')
         })  
     }
 
     validate_empty_user_pass() {
         cy.on('window:alert', (str) => {
-            expect(str).to.equal('Please insert username & password')
+            expect(str).to.equal('Please fill out Username and Password.')
         })  
     }
 }
